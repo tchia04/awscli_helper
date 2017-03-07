@@ -34,7 +34,7 @@ fi
 echo "Instance ID=$1" > $INSTANCE_ID.log
 for a in $ATTRIBUTES; do
   echo ATTRIBUTE=$a>> $INSTANCE_ID.log
-  aws --region $REGION ec2 describe-instance-attribute --instance-id $INSTANCE_ID --attribute $a --output text >> $INSTANCE_ID.log 2>&1
+  aws --region $REGION ec2 describe-instance-attribute --instance-id $INSTANCE_ID --attribute $a --output table >> $INSTANCE_ID.log 2>&1
 	echo "------------------------------" >> $INSTANCE_ID.log
 done
 
